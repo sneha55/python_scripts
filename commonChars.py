@@ -1,4 +1,7 @@
 selection = input("1.Count of common characters in each string.\n 2.Display common characters in all strings \n 3.Exit \n")
+if not selection.isdigit():
+    print("Invalid Number")
+    exit()
 if int(selection) > 3 or int(selection) < 0 :
     print("Invalid Selection")
     exit()
@@ -14,11 +17,15 @@ while names.upper() != "END":
     names = input("Next : ")
 
 if selection == "1":
-    dictName = {}
+
     for j in listOfNames:
+        cnt =0
+        dictName = {}
         for i in listOfName:
-            cnt = names.count(i)
+            cnt = j.count(i)
             if i in dictName:
+                #dictName[i] = cnt
+                #print("string : ", j, "- character ", i, "count ", cnt)
                 continue
             else:
                 dictName[i] = cnt
